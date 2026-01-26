@@ -2,7 +2,7 @@
 
 # Wayland Tablet Setup
 
-This repo contains the configuration I use to run a Linux tablet on Wayland with Sway.
+This repo contains the configuration I use to run a Linux tablet on Wayland with Sway-scroll.
 
 The goal of this setup is simple:
 make a touchscreen + pen device actually usable on Linux without constant fighting.
@@ -13,7 +13,7 @@ Everything here works on my system today. It is not meant to be universal or plu
 
 ## What this setup does
 
-- Touch friendly Sway environment
+- Touch friendly Sway-scroll environment
 - Waybar with tablet focused buttons
 - On screen keyboard using wvkbd
 - Automatic screen rotation
@@ -70,7 +70,7 @@ This keeps the tablet clean and avoids config drift.
 
 ## Repo structure (simplified)
 
-- `sway/` Sway configuration
+- `scroll/` Sway configuration
 - `waybar/` Waybar config and styling
 - `scripts/` Helper scripts like Smart Touch
 - `wvkbd/` On screen keyboard config
@@ -92,4 +92,4 @@ This repo is mainly here for reference, learning, and future iteration.
 
 This is a personal setup built around my hardware.
 If something looks opinionated, it probably is.
-Feel free to copy ideas, not blindly copy files.
+Feel free to copy ideas
