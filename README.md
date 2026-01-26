@@ -1,13 +1,15 @@
 # scroll-tablet
 
-# Wayland Tablet Setup
+## Wayland Tablet Setup
 
-This repo contains the configuration I use to run a Linux tablet on Wayland with Sway-scroll.
+This repo is my personal Linux tablet setup built on Wayland using Sway-scroll.
 
-The goal of this setup is simple:
-make a touchscreen + pen device actually usable on Linux without constant fighting.
+The whole point of this project is simple.
+I wanted a touchscreen plus pen device to actually be usable on Linux without constantly fighting the system.
 
-Everything here works on my system today. It is not meant to be universal or plug and play, but it is meant to be readable, adaptable, and stable.
+Everything here works on my hardware right now.
+This is not meant to be universal or plug and play.
+It is meant to be readable, understandable, and easy to change.
 
 ---
 
@@ -17,60 +19,62 @@ Everything here works on my system today. It is not meant to be universal or plu
 - Waybar with tablet focused buttons
 - On screen keyboard using wvkbd
 - Automatic screen rotation
-- Smart Touch system for palm rejection
+- Smart Touch system for pen and palm handling
 - Config as code workflow using Git
 
 ---
 
 ## Smart Touch (pen vs touchscreen)
 
-This setup includes a small background script called **Smart Touch**.
+This setup includes a small background script I wrote called **Smart Touch**.
 
 What it does:
-- When the pen is detected, touchscreen input is disabled
-- When the pen is no longer used, touchscreen input is re enabled after a short delay
-- This greatly reduces palm touches while writing or drawing
+- When the pen is detected, touchscreen input is turned off
+- When the pen is no longer used, touchscreen input is turned back on after a short delay
+- This helps a lot with palm touches while writing or drawing
 
-You can control it from Waybar:
-- One button toggles Smart Touch on or off
+You control it from Waybar:
+- One button turns Smart Touch on or off
 - One button cycles the cooldown time from 1 to 5 seconds
 
-This works at the compositor level, not inside a single app, so it applies system wide.
+This works at the compositor level, not inside a single app.
+That means it applies system wide.
 
 ---
 
 ## Waybar
 
-Waybar is used as the main control surface for tablet actions.
+Waybar is basically the control panel for the tablet.
 
-Current buttons include:
+Right now it has buttons for:
 - App menu
-- On screen keyboard toggle
+- On screen keyboard
 - Screen rotation
 - Smart Touch controls
-- System info like battery and clock
+- Basic system info like battery and clock
 
-Everything is designed to be usable with touch only.
+Everything is designed to work with touch only.
+No right click required.
 
 ---
 
 ## Config as code workflow
 
-This tablet is not edited directly most of the time.
+I do not normally edit the tablet directly.
 
-The workflow is:
-- All changes are made on a main PC
-- Changes are committed to this GitHub repo
+My workflow looks like this:
+- I make changes on my main PC
+- I commit everything to this GitHub repo
 - The tablet pulls updates using `git pull`
 - Configs are symlinked from the repo into `~/.config`
 
-This keeps the tablet clean and avoids config drift.
+This keeps the tablet clean and avoids config drift over time.
 
 ---
 
 ## Repo structure (simplified)
 
-- `scroll/` Sway configuration
+- `scroll/` Sway-scroll configuration
 - `waybar/` Waybar config and styling
 - `scripts/` Helper scripts like Smart Touch
 - `wvkbd/` On screen keyboard config
@@ -82,9 +86,9 @@ Some machine specific files are intentionally not tracked.
 ## Status
 
 The system is feature complete for now.
-Future changes will be incremental improvements, not rewrites.
+I will probably keep improving it slowly instead of rewriting everything.
 
-This repo is mainly here for reference, learning, and future iteration.
+This repo mainly exists for reference, learning, and future iteration.
 
 ---
 
@@ -92,4 +96,4 @@ This repo is mainly here for reference, learning, and future iteration.
 
 This is a personal setup built around my hardware.
 If something looks opinionated, it probably is.
-Feel free to copy ideas
+Feel free to copy ideas 
