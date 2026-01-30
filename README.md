@@ -1,4 +1,4 @@
-A personal setup of arch + sway-scroll for best performance on my Fujitsu Tablet
+A personal setup of arch + sway-scroll for best performance with useful functions on my Fujitsu Tablet
 
 
 Features
